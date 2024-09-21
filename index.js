@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
+let cors = require('cors');
+cors({credentials: true, origin: true})
 app.use(express.json());
+app.use(cors(corsOptions));
+
 const PORT = process.env.PORT || 5000;
 
 app.get("/status", (req, res) => {
